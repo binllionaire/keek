@@ -21,7 +21,7 @@ const Sheet = styled.div`
   gap: 20px;
 
   width: 100%;
-  height: 50vh;
+  height: ${({ option }) => (option === 0 ? "50vh" : "60vh")};
 
   background-color: ${({ theme }) => theme.colors.normalGrey};
   border-radius: 40px 40px 0 0;
@@ -31,7 +31,7 @@ const Sheet = styled.div`
   transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
   z-index: 2;
   @media screen and (max-height: 700px) {
-    height: 65vh;
+    height: ${({ option }) => (option === 0 ? "65vh" : "75vh")};
   }
 `;
 const SheetHeader = styled.div`
@@ -70,9 +70,13 @@ const Input = styled.input`
 
   outline: none;
 `;
-export default function BottomSheet({ isBottomSheetOpen, option }) {
+export default function BottomSheet({
+  isBottomSheetOpen,
+  openBottomSheet,
+  option,
+}) {
   return (
-    <Sheet isOpen={isBottomSheetOpen}>
+    <Sheet isOpen={isBottomSheetOpen} option={option}>
       <SheetHeader />
       <SheetTitle>{option === 0 ? "로그인" : "회원가입"}</SheetTitle>
       <InputWrapper>
@@ -84,11 +88,20 @@ export default function BottomSheet({ isBottomSheetOpen, option }) {
         <Input type="password" placeholder="비밀번호" />
         <InputIcon src={hideIcon}></InputIcon>
       </InputWrapper>
+      {option === 0 ? (
+        ""
+      ) : (
+        <InputWrapper>
+          <InputIcon src={passwordIcon}></InputIcon>
+          <Input type="password" placeholder="비밀번호 확인" />
+          <InputIcon src={hideIcon}></InputIcon>
+        </InputWrapper>
+      )}
       <SignBox>
-        <GreenButton>로그인</GreenButton>
+        <GreenButton>{option === 0 ? "로그인" : "회원가입"}</GreenButton>
         <SignUpBox>
           <Intro>계정이 없으신가요?</Intro>
-          <Sign>회원가입</Sign>
+          <Sign onClick={() => openBottomSheet(1)}>회원가입</Sign>
         </SignUpBox>
       </SignBox>
     </Sheet>

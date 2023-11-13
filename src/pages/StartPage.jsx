@@ -130,7 +130,11 @@ export default function StartPage() {
         isOpen={isBottomSheetOpen}
         onClick={closeBottomSheet}
       />
-      <BottomSheet isBottomSheetOpen={isBottomSheetOpen} option={signInOrUp} />
+      <BottomSheet
+        isBottomSheetOpen={isBottomSheetOpen}
+        openBottomSheet={openBottomSheet}
+        option={signInOrUp}
+      />
     </>
   );
 }
