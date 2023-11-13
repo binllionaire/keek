@@ -83,7 +83,7 @@ const BackgroundOverlay = styled.div`
   display: ${({ $isopen }) => ($isopen === "true" ? "block" : "none")};
 `;
 export default function StartPage() {
-  const [isBottomSheetOpen, setBottomSheetOpen] = useState("true");
+  const [isBottomSheetOpen, setBottomSheetOpen] = useState("false");
   const [signInOrUp, setSignInOrUp] = useState(0);
 
   const openBottomSheet = (option) => {
