@@ -1,4 +1,5 @@
-import { styled } from "styled-components";
+import React, { useState } from "react";
+import { styled, keyframes } from "styled-components";
 import thumbnailImg from "../assets/img/thumbnail.png";
 
 const Header = styled.div``;
@@ -110,7 +111,42 @@ const SignUpBox = styled.div`
 const SignUp = styled(Intro)`
   color: ${({ theme }) => theme.colors.mainGreen};
 `;
+const BackgroundOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+`;
+
+const BottomSheet = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background-color: ${({ theme }) => theme.colors.normalGrey};
+  border-radius: 40px 40px 0 0;
+  padding: 20px;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
+  z-index: 2;
+`;
+
 export default function StartPage() {
+  const [isBottomSheetOpen, setBottomSheetOpen] = useState(false);
+
+  const openBottomSheet = () => {
+    setBottomSheetOpen(true);
+  };
+
+  const closeBottomSheet = () => {
+    setBottomSheetOpen(false);
+  };
   return (
     <>
       <Header>
@@ -132,13 +168,18 @@ export default function StartPage() {
           </Intro>
         </IntroBox>
         <SignBox>
-          <GreenButton>로그인</GreenButton>
+          <GreenButton onClick={openBottomSheet}>로그인</GreenButton>
           <SignUpBox>
             <Intro>계정이 없으신가요?</Intro>
             <SignUp>회원가입</SignUp>
           </SignUpBox>
         </SignBox>
       </Section>
+      <BackgroundOverlay
+        isOpen={isBottomSheetOpen}
+        onClick={closeBottomSheet}
+      />
+      <BottomSheet isOpen={isBottomSheetOpen}></BottomSheet>
     </>
   );
 }
