@@ -54,7 +54,6 @@ const Section = styled.div`
 `;
 
 export default function TeamSettingPage() {
-  console.log(teamData);
   return (
     <>
       <Header>
