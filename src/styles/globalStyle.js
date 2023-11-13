@@ -64,6 +64,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font-family: 'Pretendard-Regular';
 	vertical-align: baseline;
+  color:${({ theme }) => theme.colors.normalText};
 }
 html{
   width: 100vw;
@@ -94,6 +95,9 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
+}
+input{
+  border:none;
 }
 table {
 	border-collapse: collapse;

@@ -126,19 +126,47 @@ const BottomSheet = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
   width: 100%;
   height: 60vh;
+
   background-color: ${({ theme }) => theme.colors.normalGrey};
   border-radius: 40px 40px 0 0;
-  padding: 20px;
+  padding: 10px 20px;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
   z-index: 2;
 `;
+const SheetHeader = styled.div`
+  width: 68px;
+  height: 8px;
 
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+`;
+const SheetTitle = styled.h2`
+  font-family: "Pretendard-SemiBold";
+  font-size: ${({ theme }) => theme.fontSize.xl};
+`;
+
+const Input = styled.input`
+  width: 100%;
+  height: 60px;
+
+  padding-left: 20px;
+  border-radius: 16px;
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  font-family: "Pretendard-SemiBold";
+  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.normalText};
+`;
 export default function StartPage() {
-  const [isBottomSheetOpen, setBottomSheetOpen] = useState(false);
+  const [isBottomSheetOpen, setBottomSheetOpen] = useState(true);
 
   const openBottomSheet = () => {
     setBottomSheetOpen(true);
@@ -155,7 +183,7 @@ export default function StartPage() {
       <Section>
         <ThumbnailBox>
           <BackgroundBox></BackgroundBox>
-          <ThumbnailImg src={thumbnailImg} alt="썸네일 이미지" />;
+          <ThumbnailImg src={thumbnailImg} alt="썸네일 이미지" />
         </ThumbnailBox>
         <IntroBox>
           <Title>KEEK</Title>
@@ -179,7 +207,19 @@ export default function StartPage() {
         isOpen={isBottomSheetOpen}
         onClick={closeBottomSheet}
       />
-      <BottomSheet isOpen={isBottomSheetOpen}></BottomSheet>
+      <BottomSheet isOpen={isBottomSheetOpen}>
+        <SheetHeader />
+        <SheetTitle>로그인</SheetTitle>
+        <Input placeholder="아이디"></Input>
+        <Input placeholder="비밀번호"></Input>
+        <SignBox>
+          <GreenButton onClick={openBottomSheet}>회원가입</GreenButton>
+          <SignUpBox>
+            <Intro>계정이 없으신가요?</Intro>
+            <SignUp>회원가입</SignUp>
+          </SignUpBox>
+        </SignBox>
+      </BottomSheet>
     </>
   );
 }
