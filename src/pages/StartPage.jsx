@@ -5,18 +5,13 @@ import BottomSheet from "../components/BottomSheet";
 import {
   GreenButton,
   Intro,
+  Logo,
   Sign,
   SignBox,
   SignUpBox,
 } from "../styles/GlobalStyle";
 
 const Header = styled.div``;
-
-const Logo = styled.h1`
-  font-family: "Pretendard-Black";
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  color: ${({ theme }) => theme.colors.mainGreen};
-`;
 
 const Section = styled.section`
   display: flex;

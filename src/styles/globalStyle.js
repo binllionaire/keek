@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Pretendard-Bold'; 
         src: url(${PPRETENDARD_BOLD}) format('woff');
-        font-weight: normal;
+        font-weight: 700;
         font-style: normal;
     }
     @font-face {
@@ -105,6 +105,12 @@ table {
 }
 `;
 export default GlobalStyle;
+
+export const Logo = styled.h1`
+  font-family: "Pretendard-Black";
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  color: ${({ theme }) => theme.colors.mainGreen};
+`;
 
 export const GreenButton = styled.button`
   width: 100%;
