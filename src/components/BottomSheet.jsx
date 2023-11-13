@@ -27,7 +27,7 @@ const Sheet = styled.div`
   border-radius: 40px 40px 0 0;
   padding: 10px 20px;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, height 0.3s;
   transform: translateY(
     ${({ $isopen }) => ($isopen === "true" ? "0" : "100%")}
   );
@@ -102,8 +102,16 @@ export default function BottomSheet({
       <SignBox>
         <GreenButton>{option === 0 ? "로그인" : "회원가입"}</GreenButton>
         <SignUpBox>
-          <Intro>계정이 없으신가요?</Intro>
-          <Sign onClick={() => openBottomSheet(1)}>회원가입</Sign>
+          <Intro>
+            {option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}
+          </Intro>
+          <Sign
+            onClick={() => {
+              option === 0 ? openBottomSheet(1) : openBottomSheet(0);
+            }}
+          >
+            {option === 0 ? "회원가입" : "로그인"}
+          </Sign>
         </SignUpBox>
       </SignBox>
     </Sheet>
