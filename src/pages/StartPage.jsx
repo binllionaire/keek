@@ -108,7 +108,7 @@ const SignUpBox = styled.div`
   gap: 10px;
 `;
 
-const SignUp = styled(Intro)`
+const Sign = styled(Intro)`
   color: ${({ theme }) => theme.colors.mainGreen};
 `;
 const BackgroundOverlay = styled.div`
@@ -199,7 +199,7 @@ export default function StartPage() {
           <GreenButton onClick={openBottomSheet}>로그인</GreenButton>
           <SignUpBox>
             <Intro>계정이 없으신가요?</Intro>
-            <SignUp>회원가입</SignUp>
+            <Sign>회원가입</Sign>
           </SignUpBox>
         </SignBox>
       </Section>
@@ -213,10 +213,10 @@ export default function StartPage() {
         <Input placeholder="아이디"></Input>
         <Input placeholder="비밀번호"></Input>
         <SignBox>
-          <GreenButton onClick={openBottomSheet}>회원가입</GreenButton>
+          <GreenButton onClick={openBottomSheet}>로그인</GreenButton>
           <SignUpBox>
             <Intro>계정이 없으신가요?</Intro>
-            <SignUp>회원가입</SignUp>
+            <Sign>회원가입</Sign>
           </SignUpBox>
         </SignBox>
       </BottomSheet>
