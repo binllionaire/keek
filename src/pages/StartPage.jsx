@@ -84,19 +84,19 @@ const BackgroundOverlay = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  display: ${({ $isopen }) => ($isopen === "true" ? "block" : "none")};
 `;
 export default function StartPage() {
-  const [isBottomSheetOpen, setBottomSheetOpen] = useState(true);
+  const [isBottomSheetOpen, setBottomSheetOpen] = useState("true");
   const [signInOrUp, setSignInOrUp] = useState(0);
 
   const openBottomSheet = (option) => {
-    setBottomSheetOpen(true);
+    setBottomSheetOpen("true");
     option === 0 ? setSignInOrUp(0) : setSignInOrUp(1);
   };
 
   const closeBottomSheet = () => {
-    setBottomSheetOpen(false);
+    setBottomSheetOpen("false");
   };
   return (
     <>
@@ -127,7 +127,7 @@ export default function StartPage() {
         </SignBox>
       </Section>
       <BackgroundOverlay
-        isOpen={isBottomSheetOpen}
+        $isopen={isBottomSheetOpen}
         onClick={closeBottomSheet}
       />
       <BottomSheet

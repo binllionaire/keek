@@ -28,7 +28,9 @@ const Sheet = styled.div`
   padding: 10px 20px;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
+  transform: translateY(
+    ${({ $isopen }) => ($isopen === "true" ? "0" : "100%")}
+  );
   z-index: 2;
   @media screen and (max-height: 700px) {
     height: ${({ option }) => (option === 0 ? "65vh" : "75vh")};
@@ -76,7 +78,7 @@ export default function BottomSheet({
   option,
 }) {
   return (
-    <Sheet isOpen={isBottomSheetOpen} option={option}>
+    <Sheet $isopen={isBottomSheetOpen} option={option}>
       <SheetHeader />
       <SheetTitle>{option === 0 ? "로그인" : "회원가입"}</SheetTitle>
       <InputWrapper>
