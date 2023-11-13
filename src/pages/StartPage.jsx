@@ -136,7 +136,7 @@ const BottomSheet = styled.div`
   gap: 20px;
 
   width: 100%;
-  height: 60vh;
+  height: 50vh;
 
   background-color: ${({ theme }) => theme.colors.normalGrey};
   border-radius: 40px 40px 0 0;
@@ -145,6 +145,9 @@ const BottomSheet = styled.div`
   transition: transform 0.3s ease-in-out;
   transform: translateY(${({ isOpen }) => (isOpen ? "0" : "100%")});
   z-index: 2;
+  @media screen and (max-height: 700px) {
+    height: 65vh;
+  }
 `;
 const SheetHeader = styled.div`
   width: 68px;
@@ -153,6 +156,7 @@ const SheetHeader = styled.div`
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 const SheetTitle = styled.h2`
+  margin: 16px 0;
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.xl};
 `;
