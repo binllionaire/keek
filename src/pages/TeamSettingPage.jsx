@@ -1,7 +1,8 @@
 import { GreenButton, Logo, SignBox } from "../styles/GlobalStyle";
 import { styled } from "styled-components";
-import tottenham from "../assets/img/club/club_tottenham.png";
 import searchIcon from "../assets/icons/Search.svg";
+import { teamData } from "../constants/TeamData.js";
+import TeamBox from "../components/TeamBox";
 
 const Header = styled.div`
   display: flex;
@@ -52,32 +53,8 @@ const Section = styled.div`
   }
 `;
 
-const TeamBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-`;
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-`;
-
-const TeamLogo = styled.img`
-  width: 42px;
-`;
-
-const TeamName = styled.p`
-  font-family: "Pretendard-Regular";
-  font-size: ${({ theme }) => theme.fontSize.xs};
-`;
 export default function TeamSettingPage() {
+  console.log(teamData);
   return (
     <>
       <Header>
@@ -89,12 +66,13 @@ export default function TeamSettingPage() {
         <Intro>꾹 누르면 최애로 등록해요</Intro>
       </PageIntroWrapper>
       <Section>
-        <TeamBox>
-          <LogoWrapper>
-            <TeamLogo src={tottenham} />
-          </LogoWrapper>
-          <TeamName>토트넘</TeamName>
-        </TeamBox>
+        {teamData.map((team) => (
+          <TeamBox
+            key={team.id}
+            logoSrc={team.logoSrc}
+            teamName={team.teamName}
+          />
+        ))}
       </Section>
       <NavWrapper>
         <GreenButton>다음</GreenButton>
