@@ -43,7 +43,7 @@ const Section = styled.div`
   row-gap: 12px;
 
   margin-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -68,6 +68,7 @@ export default function TeamSettingPage() {
         {teamData.map((team) => (
           <TeamBox
             key={team.id}
+            id={team.id}
             logoSrc={team.logoSrc}
             teamName={team.teamName}
           />

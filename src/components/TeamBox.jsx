@@ -7,14 +7,18 @@ const TeamBoxWrapper = styled.div`
   align-items: center;
   gap: 8px;
 `;
-const LogoWrapper = styled.div`
+
+const LogoWrapper = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 70px;
   height: 70px;
+
   border-radius: 100%;
   background-color: ${({ theme }) => theme.colors.lightGrey};
+  box-shadow: 0;
 `;
 
 const TeamLogo = styled.img`
@@ -26,10 +30,20 @@ const TeamName = styled.p`
   font-size: ${({ theme }) => theme.fontSize.xs};
 `;
 
-export default function TeamBox({ logoSrc, teamName }) {
+const RadioInput = styled.input`
+  display: none;
+
+  &:checked + label {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.mainGreen} inset;
+    transition: box-shadow 0.3s;
+  }
+`;
+
+export default function TeamBox({ id, logoSrc, teamName }) {
   return (
     <TeamBoxWrapper>
-      <LogoWrapper>
+      <RadioInput type="radio" id={`team${id}`} name="team" />
+      <LogoWrapper htmlFor={`team${id}`}>
         <TeamLogo src={logoSrc} alt={teamName} />
       </LogoWrapper>
       <TeamName>{teamName}</TeamName>
