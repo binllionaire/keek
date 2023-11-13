@@ -30,7 +30,7 @@ export default function TeamBox({ logoSrc, teamName }) {
   return (
     <TeamBoxWrapper>
       <LogoWrapper>
-        <TeamLogo src={logoSrc} />
+        <TeamLogo src={logoSrc} alt={teamName} />
       </LogoWrapper>
       <TeamName>{teamName}</TeamName>
     </TeamBoxWrapper>
