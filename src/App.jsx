@@ -1,6 +1,6 @@
-import StartPage from "./pages/StartPage";
+import Router from "./components/Router";
 function App() {
-  return <StartPage />;
+  return <Router />;
 }
 
 export default App;
