@@ -25,7 +25,6 @@ const Title = styled.h2`
 `;
 
 const Intro = styled.h3`
-  font-family: "Pretendard-Bold";
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.colors.normalText};
 `;
@@ -62,7 +61,7 @@ export default function TeamSettingPage() {
       </Header>
       <PageIntroWrapper>
         <Title>전체 팀</Title>
-        <Intro>꾹 누르면 최애로 등록해요</Intro>
+        <Intro>가장 좋아하는 팀을 선택하세요</Intro>
       </PageIntroWrapper>
       <Section>
         {teamData.map((team) => (
