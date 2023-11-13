@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { styled, keyframes } from "styled-components";
 import thumbnailImg from "../assets/img/thumbnail.png";
+import loginIcon from "../assets/icons/User.svg";
+import passwordIcon from "../assets/icons/Password.svg";
+import hideIcon from "../assets/icons/Hide.svg";
 
 const Header = styled.div``;
 
@@ -154,16 +157,29 @@ const SheetTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
-const Input = styled.input`
+const InputWrapper = styled.div`
   width: 100%;
   height: 60px;
 
-  padding-left: 20px;
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
   border-radius: 16px;
+
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+`;
+const InputIcon = styled.img``;
+const Input = styled.input`
+  flex-grow: 1;
+
+  border-radius: 16px;
+
   background-color: ${({ theme }) => theme.colors.darkGrey};
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.normalText};
+
+  outline: none;
 `;
 export default function StartPage() {
   const [isBottomSheetOpen, setBottomSheetOpen] = useState(true);
@@ -210,8 +226,15 @@ export default function StartPage() {
       <BottomSheet isOpen={isBottomSheetOpen}>
         <SheetHeader />
         <SheetTitle>로그인</SheetTitle>
-        <Input placeholder="아이디"></Input>
-        <Input placeholder="비밀번호"></Input>
+        <InputWrapper>
+          <InputIcon src={loginIcon}></InputIcon>
+          <Input placeholder="아이디" />
+        </InputWrapper>
+        <InputWrapper>
+          <InputIcon src={passwordIcon}></InputIcon>
+          <Input type="password" placeholder="비밀번호" />
+          <InputIcon src={hideIcon}></InputIcon>
+        </InputWrapper>
         <SignBox>
           <GreenButton onClick={openBottomSheet}>로그인</GreenButton>
           <SignUpBox>
