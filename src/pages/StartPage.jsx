@@ -41,6 +41,7 @@ const BackgroundBox = styled.div`
   bottom: 0;
 
   width: 75%;
+  max-width: 768px;
   height: 260px;
 
   border-radius: 50px;

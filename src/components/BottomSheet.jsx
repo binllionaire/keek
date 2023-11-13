@@ -91,7 +91,7 @@ export default function BottomSheet({
         <InputIcon src={hideIcon}></InputIcon>
       </InputWrapper>
       {option === 0 ? (
-        ""
+        <></>
       ) : (
         <InputWrapper>
           <InputIcon src={passwordIcon}></InputIcon>
