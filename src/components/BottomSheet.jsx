@@ -2,13 +2,7 @@ import { styled } from "styled-components";
 import loginIcon from "../assets/icons/User.svg";
 import passwordIcon from "../assets/icons/Password.svg";
 import hideIcon from "../assets/icons/Hide.svg";
-import {
-  GreenButton,
-  Intro,
-  Sign,
-  SignBox,
-  SignUpBox,
-} from "../styles/GlobalStyle";
+import { ST } from "../styles/commonStyle";
 
 const Sheet = styled.div`
   position: fixed;
@@ -99,21 +93,21 @@ export default function BottomSheet({
           <InputIcon src={hideIcon}></InputIcon>
         </InputWrapper>
       )}
-      <SignBox>
-        <GreenButton>{option === 0 ? "로그인" : "회원가입"}</GreenButton>
-        <SignUpBox>
-          <Intro>
+      <ST.SignBox>
+        <ST.GreenButton>{option === 0 ? "로그인" : "회원가입"}</ST.GreenButton>
+        <ST.SignUpBox>
+          <ST.Intro>
             {option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}
-          </Intro>
-          <Sign
+          </ST.Intro>
+          <ST.Sign
             onClick={() => {
               option === 0 ? openBottomSheet(1) : openBottomSheet(0);
             }}
           >
             {option === 0 ? "회원가입" : "로그인"}
-          </Sign>
-        </SignUpBox>
-      </SignBox>
+          </ST.Sign>
+        </ST.SignUpBox>
+      </ST.SignBox>
     </Sheet>
   );
 }

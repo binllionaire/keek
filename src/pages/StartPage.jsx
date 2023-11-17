@@ -2,14 +2,7 @@ import { useState } from "react";
 import { styled } from "styled-components";
 import thumbnailImg from "../assets/img/thumbnail.png";
 import BottomSheet from "../components/BottomSheet";
-import {
-  GreenButton,
-  Intro,
-  Logo,
-  Sign,
-  SignBox,
-  SignUpBox,
-} from "../styles/GlobalStyle";
+import { ST } from "../styles/commonStyle";
 
 const Header = styled.div``;
 
@@ -97,7 +90,7 @@ export default function StartPage() {
   return (
     <>
       <Header>
-        <Logo>KEEK</Logo>
+        <ST.Logo>KEEK</ST.Logo>
       </Header>
       <Section>
         <ThumbnailBox>
@@ -106,21 +99,23 @@ export default function StartPage() {
         </ThumbnailBox>
         <IntroBox>
           <Title>KEEK</Title>
-          <Intro>
+          <ST.Intro>
             끽에서는 최애팀을 선택하고
             <br />
             최애 팀과 선수를 선택하여
             <br />
             자신이 원하는 정보를 제공받을 수 있어요
-          </Intro>
+          </ST.Intro>
         </IntroBox>
-        <SignBox>
-          <GreenButton onClick={() => openBottomSheet(0)}>로그인</GreenButton>
-          <SignUpBox>
-            <Intro>계정이 없으신가요?</Intro>
-            <Sign onClick={() => openBottomSheet(1)}>회원가입</Sign>
-          </SignUpBox>
-        </SignBox>
+        <ST.SignBox>
+          <ST.GreenButton onClick={() => openBottomSheet(0)}>
+            로그인
+          </ST.GreenButton>
+          <ST.SignUpBox>
+            <ST.Intro>계정이 없으신가요?</ST.Intro>
+            <ST.Sign onClick={() => openBottomSheet(1)}>회원가입</ST.Sign>
+          </ST.SignUpBox>
+        </ST.SignBox>
       </Section>
       <BackgroundOverlay
         $isopen={isBottomSheetOpen}
