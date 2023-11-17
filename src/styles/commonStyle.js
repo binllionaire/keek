@@ -87,7 +87,7 @@ const Section = styled.div`
 
   height: 75vh;
 
-  margin-top: 40px;
+  margin-top: 30px;
   padding-bottom: 120px;
 
   &::-webkit-scrollbar {
