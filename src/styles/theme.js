@@ -5,12 +5,13 @@ const colors = {
   mainGreen: "#00FF29",
   normalGreen: "#0C8B29",
   darkGreen: "#125229",
-  normalText: "#FFFFFF",
+  white: "#FFFFFF",
   lightText: "#CCCCCC",
   darkText: "#65656B",
 };
 
 const fontSize = {
+  xxs: "8px",
   xs: "12px",
   s: "14px",
   m: "16px",

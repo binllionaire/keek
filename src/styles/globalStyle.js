@@ -64,7 +64,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font-family: 'Pretendard-Regular';
 	vertical-align: baseline;
-  color:${({ theme }) => theme.colors.normalText};
+  color:${({ theme }) => theme.colors.white};
 }
 html{
   width: 100vw;

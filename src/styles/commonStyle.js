@@ -7,6 +7,8 @@ const Logo = styled.h1`
 `;
 
 const GreenButton = styled.button`
+  z-index: 2;
+
   width: 100%;
   max-width: 768px;
   height: 60px;
@@ -17,7 +19,7 @@ const GreenButton = styled.button`
   background-color: ${({ theme }) => theme.colors.normalGreen};
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.normalText};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const SignBox = styled.div`
@@ -68,7 +70,7 @@ const PageIntroWrapper = styled.div`
 const Title = styled.h2`
   font-family: "Pretendard-Black";
   font-size: ${({ theme }) => theme.fontSize.xl};
-  color: ${({ theme }) => theme.colors.normalText};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const NavWrapper = styled(SignBox)`
@@ -83,16 +85,16 @@ const Section = styled.div`
   gap: 10px;
   row-gap: 12px;
 
+  height: 75vh;
+
   margin-top: 40px;
   padding-bottom: 120px;
 
   &::-webkit-scrollbar {
     display: none;
   }
-  @media screen and (max-height: 700px) {
-    height: 500px;
-  }
 `;
+
 export const ST = {
   Header,
   PageIntroWrapper,

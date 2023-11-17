@@ -62,7 +62,7 @@ const Input = styled.input`
   background-color: ${({ theme }) => theme.colors.darkGrey};
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.normalText};
+  color: ${({ theme }) => theme.colors.white};
 
   outline: none;
 `;
