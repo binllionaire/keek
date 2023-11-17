@@ -5,9 +5,7 @@ const PlayerBox = ({ id, flagSrc, korName, engName, number, playerImgSrc }) => {
     <>
       <RadioInput type="radio" id={`player${id}`} name="player" />
       <PlayerBoxWrapper htmlFor={`player${id}`}>
-        <FlagWrapper>
-          <FlagImg src={flagSrc} />
-        </FlagWrapper>
+        <Flag $flagSrc={flagSrc} />
         <KorName>{korName}</KorName>
         <EngName>{engName}</EngName>
         <Number>{number}</Number>
@@ -46,7 +44,7 @@ const RadioInput = styled.input`
   }
 `;
 
-const FlagWrapper = styled.div`
+const Flag = styled.div`
   overflow: hidden;
 
   width: 20px;
@@ -55,15 +53,9 @@ const FlagWrapper = styled.div`
   margin-bottom: 10px;
   border-radius: 100%;
 
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-const FlagImg = styled.img`
-  width: 25px;
-  height: 25px;
-
-  margin-left: -2.5px;
-  margin-top: -2.5px;
+  background-image: ${({ $flagSrc }) => `url(${$flagSrc})`};
+  background-size: cover;
+  background-position: center;
 `;
 
 const PlayerImg = styled.img`
