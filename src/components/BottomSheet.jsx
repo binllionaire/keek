@@ -34,6 +34,8 @@ const SheetHeader = styled.div`
   width: 68px;
   height: 8px;
 
+  border-radius: 10px;
+
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 const SheetTitle = styled.h2`
