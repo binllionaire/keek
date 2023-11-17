@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PlayerSettingPage from "../pages/PlayerSettingPage";
 import StartPage from "../pages/StartPage";
 import TeamSettingPage from "../pages/TeamSettingPage";
 const Router = () => {
@@ -7,6 +8,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/team" element={<TeamSettingPage />}></Route>
+        <Route path="/player" element={<PlayerSettingPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
