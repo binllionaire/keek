@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import PPRETENDARD_BLACK from "../assets/fonts/PretendardStd-Black.woff";
 import PPRETENDARD_BOLD from "../assets/fonts/PretendardStd-Bold.woff";
 import PPRETENDARD_MEDIUM from "../assets/fonts/PretendardStd-Medium.woff";
@@ -105,54 +105,3 @@ table {
 }
 `;
 export default GlobalStyle;
-
-export const Logo = styled.h1`
-  font-family: "Pretendard-Black";
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  color: ${({ theme }) => theme.colors.mainGreen};
-`;
-
-export const GreenButton = styled.button`
-  width: 100%;
-  max-width: 768px;
-  height: 60px;
-
-  margin: 0 auto;
-
-  border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.normalGreen};
-  font-family: "Pretendard-SemiBold";
-  font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.normalText};
-`;
-
-export const SignBox = styled.div`
-  position: absolute;
-  bottom: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  width: 100%;
-
-  padding: 28px;
-`;
-
-export const SignUpBox = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-`;
-
-export const Intro = styled.p`
-  font-family: "Pretendard-Regular";
-  font-size: ${({ theme }) => theme.fontSize.m};
-  color: ${({ theme }) => theme.colors.lightText};
-  text-align: start;
-  line-height: 24px;
-`;
-
-export const Sign = styled(Intro)`
-  color: ${({ theme }) => theme.colors.mainGreen};
-`;
