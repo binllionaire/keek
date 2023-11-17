@@ -11,7 +11,7 @@ export default function PlayerSettingPage() {
         <img src={searchIcon} />
       </ST.Header>
       <ST.PageIntroWrapper>
-        <ST.Title>전체 선수</ST.Title>
+        <ST.Title>선수 선택</ST.Title>
         <ST.Intro>가장 좋아하는 선수를 선택하세요</ST.Intro>
       </ST.PageIntroWrapper>
       <ST.Section>
