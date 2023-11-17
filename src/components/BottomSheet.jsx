@@ -3,8 +3,10 @@ import loginIcon from "../assets/icons/User.svg";
 import passwordIcon from "../assets/icons/Password.svg";
 import hideIcon from "../assets/icons/Hide.svg";
 import { ST } from "../styles/commonStyle";
+import { useNavigate } from "react-router-dom";
 
 const Sheet = styled.div`
+  z-index: 2;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -17,19 +19,22 @@ const Sheet = styled.div`
   width: 100%;
   height: ${({ option }) => (option === 0 ? "50vh" : "60vh")};
 
-  background-color: ${({ theme }) => theme.colors.normalGrey};
-  border-radius: 40px 40px 0 0;
   padding: 10px 20px;
+
+  background-color: ${({ theme }) => theme.colors.normalGrey};
+
+  border-radius: 40px 40px 0 0;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, height 0.3s;
   transform: translateY(
     ${({ $isopen }) => ($isopen === "true" ? "0" : "100%")}
   );
-  z-index: 2;
+
   @media screen and (max-height: 700px) {
     height: ${({ option }) => (option === 0 ? "65vh" : "75vh")};
   }
 `;
+
 const SheetHeader = styled.div`
   width: 68px;
   height: 8px;
@@ -38,6 +43,7 @@ const SheetHeader = styled.div`
 
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
+
 const SheetTitle = styled.h2`
   margin: 16px 0;
   font-family: "Pretendard-SemiBold";
@@ -55,7 +61,9 @@ const InputWrapper = styled.div`
 
   background-color: ${({ theme }) => theme.colors.darkGrey};
 `;
+
 const InputIcon = styled.img``;
+
 const Input = styled.input`
   flex-grow: 1;
 
@@ -68,11 +76,18 @@ const Input = styled.input`
 
   outline: none;
 `;
+
 export default function BottomSheet({
   isBottomSheetOpen,
   openBottomSheet,
   option,
 }) {
+  const navigate = useNavigate();
+
+  const navToSettingPage = () => {
+    navigate("/team");
+  };
+
   return (
     <Sheet $isopen={isBottomSheetOpen} option={option}>
       <SheetHeader />
@@ -96,7 +111,11 @@ export default function BottomSheet({
         </InputWrapper>
       )}
       <ST.SignBox>
-        <ST.GreenButton>{option === 0 ? "로그인" : "회원가입"}</ST.GreenButton>
+        {option === 0 ? (
+          <ST.GreenButton onClick={navToSettingPage}>로그인</ST.GreenButton>
+        ) : (
+          <ST.GreenButton>회원가입</ST.GreenButton>
+        )}
         <ST.SignUpBox>
           <ST.Intro>
             {option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}
