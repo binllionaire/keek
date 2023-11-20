@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { ST } from "../styles/commonStyle";
-import searchIcon from "../assets/icons/Search.svg";
 import styled from "styled-components";
 import RecordBox from "../components/RecordBox";
 import { useState } from "react";
 import BoardHeader from "../components/BoardHeader";
 import { PAGE } from "../constants/Page";
 import BottomNav from "../components/BottomNav";
+import Header from "../components/common/Header";
 const RecordPage = () => {
   const [teams, setTeams] = useState([]);
 
@@ -25,10 +25,7 @@ const RecordPage = () => {
 
   return (
     <>
-      <ST.Header>
-        <ST.Logo>KEEK</ST.Logo>
-        <img src={searchIcon} />
-      </ST.Header>
+      <Header />
       <ST.PageIntroWrapper>
         <ST.Title>전체 순위</ST.Title>
         <ST.Intro>모든 팀의 순위를 확인하세요</ST.Intro>

@@ -1,8 +1,8 @@
 import { ST } from "../styles/commonStyle";
-import searchIcon from "../assets/icons/Search.svg";
 import { teamData } from "../constants/TeamData.js";
 import TeamBox from "../components/TeamBox";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/common/Header";
 
 export default function TeamSettingPage() {
   const navigate = useNavigate();
@@ -12,10 +12,7 @@ export default function TeamSettingPage() {
   };
   return (
     <>
-      <ST.Header>
-        <ST.Logo>KEEK</ST.Logo>
-        <img src={searchIcon} />
-      </ST.Header>
+      <Header />
       <ST.PageIntroWrapper>
         <ST.Title>팀 선택</ST.Title>
         <ST.Intro>가장 좋아하는 팀을 선택하세요</ST.Intro>
