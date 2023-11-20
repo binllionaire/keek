@@ -108,3 +108,37 @@ export const ST = {
   SignBox,
   SignUpBox,
 };
+
+const Rank = styled.div`
+  flex-basis: 10%;
+`;
+const Team = styled.div`
+  flex-basis: 30%;
+  display: flex;
+  line-height: ${({ theme }) => theme.fontSize.m};
+`;
+const Game = styled.div`
+  flex-basis: 10%;
+`;
+const Win = styled.div`
+  flex-basis: 10%;
+`;
+const Draw = styled.div`
+  flex-basis: 10%;
+`;
+const Lose = styled.div`
+  flex-basis: 10%;
+`;
+const Point = styled.div`
+  flex-basis: 10%;
+`;
+
+export const R = {
+  Rank,
+  Team,
+  Game,
+  Win,
+  Draw,
+  Lose,
+  Point,
+};
