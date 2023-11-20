@@ -15,7 +15,7 @@ const BottomNav = ({ page }) => {
     case PAGE.HOME:
       homeColor = "#00FF29";
       break;
-    case PAGE.SCEDULE:
+    case PAGE.SCHEDULE:
       scheduleColor = "#00FF29";
       break;
     case PAGE.RECORD:
