@@ -4,6 +4,10 @@
       "src": "/api/prx/hermes/api/team(.*)",
       "dest": "https://sports.daum.net/prx/hermes/api/team/rank.json?leagueCode=epl&seasonKey=20232024&page=1&pageSize=100"
     },
+    {
+      "src": "/api/prx/hermes/api/game(.*)",
+      "dest": "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=epl&seasonKey=20232024&fromDate=20231201&toDate=20231231"
+    },
     { "src": "/[^.]+", "dest": "/", "status": 200 }
   ]
 }
