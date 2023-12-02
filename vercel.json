@@ -1,9 +1,6 @@
 {
   "routes": [
-    { "src": "/[^.]+", "dest": "/", "status": 200 },
-    {
-      "source": "/api/:path*/",
-      "destination": "https://sports.daum.net/:path*/"
-    }
+    { "src": "/api/(.*)", "dest": "https://sports.daum.net" },
+    { "src": "/[^.]+", "dest": "/", "status": 200 }
   ]
 }
