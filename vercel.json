@@ -1,6 +1,9 @@
 {
   "routes": [
-    { "src": "/api/(.*)", "dest": "https://sports.daum.net" },
+    {
+      "src": "/api/prx/hermes/api/team(.*)",
+      "dest": "https://sports.daum.net/prx/hermes/api/team/rank.json?leagueCode=epl&seasonKey=20232024&page=1&pageSize=100"
+    },
     { "src": "/[^.]+", "dest": "/", "status": 200 }
   ]
 }
