@@ -8,35 +8,40 @@ import PPRETENDARD_SEMIBOLD from "../assets/fonts/PretendardStd-SemiBold.woff";
 const GlobalStyle = createGlobalStyle`
 * {
     @font-face {
-        font-family: 'Pretendard-Black'; 
-        src: url(${PPRETENDARD_BLACK}) format('woff');
+        font-family: 'Pretendard-Black';
         font-weight: 900;
-        font-style: normal;
+        font-style: normal; 
+        src: url(${PPRETENDARD_BLACK}) format('woff');
     }
+
     @font-face {
-        font-family: 'Pretendard-Bold'; 
-        src: url(${PPRETENDARD_BOLD}) format('woff');
+        font-family: 'Pretendard-Bold';
         font-weight: 700;
-        font-style: normal;
+        font-style: normal; 
+        src: url(${PPRETENDARD_BOLD}) format('woff');
     }
+
     @font-face {
-        font-family: 'Pretendard-Medium'; 
-        src: url(${PPRETENDARD_MEDIUM}) format('woff');
+        font-family: 'Pretendard-Medium';
         font-weight: 500;
-        font-style: normal;
+        font-style: normal; 
+        src: url(${PPRETENDARD_MEDIUM}) format('woff');
     }
+
     @font-face {
-        font-family: 'Pretendard-Regular'; 
-        src: url(${PPRETENDARD_REGULAR}) format('woff');
+        font-family: 'Pretendard-Regular';
         font-weight: 400;
-        font-style: normal;
+        font-style: normal; 
+        src: url(${PPRETENDARD_REGULAR}) format('woff');
     }
+
     @font-face {
-        font-family: 'Pretendard-SemiBold'; 
-        src: url(${PPRETENDARD_SEMIBOLD}) format('woff');
+        font-family: 'Pretendard-SemiBold';
         font-weight: 600;
-        font-style: normal;
+        font-style: normal; 
+        src: url(${PPRETENDARD_SEMIBOLD}) format('woff');
     }
+
     box-sizing : border-box;
 }
 
@@ -60,17 +65,21 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
+
 	font-family: 'Pretendard-Regular';
-	vertical-align: baseline;
+	font-size: 100%;
   color:${({ theme }) => theme.colors.white};
+	vertical-align: baseline;
+
+	border: 0;
 }
 html{
+  overflow: hidden;
+
   width: 100vw;
   height: 100vh;
   padding: 28px;
-  overflow: hidden;
+
   background-color:${({ theme }) => theme.colors.darkGrey};
 }
 /* HTML5 display-role reset for older browsers */
@@ -82,8 +91,8 @@ body {
 	line-height: 1;
 }
 button{
-  border: none;
   cursor:pointer;
+  border: none;
 }
 ol, ul {
 	list-style: none;
@@ -100,8 +109,8 @@ input{
   border:none;
 }
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
+	border-collapse: collapse;
 }
 `;
 export default GlobalStyle;

@@ -18,21 +18,21 @@ const PlayerBox = ({ id, flagSrc, korName, engName, number, playerImgSrc }) => {
 export default PlayerBox;
 
 const PlayerBoxWrapper = styled.label`
-  overflow: hidden;
   position: relative;
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 
   width: 98px;
   height: 150px;
-
   padding: 10px;
 
-  border-radius: 12px;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-  box-shadow: 0;
-
   color: ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  border-radius: 12px;
+  box-shadow: 0;
 `;
 
 const RadioInput = styled.input`
@@ -49,29 +49,28 @@ const Flag = styled.div`
 
   width: 20px;
   height: 20px;
-
   margin-bottom: 10px;
-  border-radius: 100%;
 
   background-image: ${({ $flagSrc }) => `url(${$flagSrc})`};
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  border-radius: 100%;
 `;
 
 const PlayerImg = styled.img`
   position: absolute;
-  bottom: 0;
   right: -30px;
-
+  bottom: 0;
   width: 100px;
 `;
 
 const KorName = styled.p`
   z-index: 1;
+
   margin-bottom: 4px;
 
-  font-size: ${({ theme }) => theme.fontSize.s};
   font-family: "Pretendard-Bold";
+  font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: 700;
 `;
 
@@ -80,15 +79,14 @@ const EngName = styled.p`
 
   margin-bottom: 50px;
 
-  font-size: ${({ theme }) => theme.fontSize.xxs};
   font-family: "Pretendard-Bold";
+  font-size: ${({ theme }) => theme.fontSize.xxs};
   font-weight: 700;
 `;
 
 const Number = styled.p`
   z-index: 1;
-
-  font-size: ${({ theme }) => theme.fontSize.xl};
   font-family: "Pretendard-Bold";
+  font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: 700;
 `;

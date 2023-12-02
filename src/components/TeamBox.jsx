@@ -3,21 +3,21 @@ import { styled } from "styled-components";
 const TeamBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const LogoWrapper = styled.label`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 70px;
   height: 70px;
 
-  border-radius: 100%;
   background-color: ${({ theme }) => theme.colors.lightGrey};
+  border-radius: 100%;
   box-shadow: 0;
 `;
 

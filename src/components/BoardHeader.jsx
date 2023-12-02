@@ -20,9 +20,10 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
 
-  padding-bottom: 14px;
   margin-bottom: 14px;
+  padding-bottom: 14px;
+
+  text-align: center;
 
   border-bottom: ${({ theme }) => theme.colors.lightGrey} 1px solid;
-  text-align: center;
 `;

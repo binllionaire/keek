@@ -56,14 +56,16 @@ const BoardWrapper = styled.div`
   justify-content: center;
 
   margin-top: 30px;
+
   font-size: ${({ theme }) => theme.fontSize.s};
 `;
 
 const BoardBody = styled.div`
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
+
   max-height: 65vh;
   padding-bottom: 75px;
-  overflow-y: auto;
 `;

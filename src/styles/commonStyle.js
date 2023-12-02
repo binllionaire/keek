@@ -12,14 +12,14 @@ const GreenButton = styled.button`
   width: 100%;
   max-width: 768px;
   height: 60px;
-
   margin: 0 auto;
 
-  border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.normalGreen};
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.normalGreen};
+  border-radius: 16px;
 `;
 
 const SignBox = styled.div`
@@ -31,22 +31,21 @@ const SignBox = styled.div`
   gap: 12px;
 
   width: 100%;
-
   padding: 28px;
 `;
 
 const SignUpBox = styled.div`
   display: flex;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
 `;
 
 const Intro = styled.p`
   font-family: "Pretendard-Regular";
   font-size: ${({ theme }) => theme.fontSize.m};
+  line-height: 24px;
   color: ${({ theme }) => theme.colors.lightText};
   text-align: start;
-  line-height: 24px;
 `;
 
 const Sign = styled(Intro)`
@@ -61,8 +60,8 @@ const Header = styled.div`
 const PageIntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 10px;
+  justify-content: space-between;
 
   margin-top: 40px;
 `;
@@ -81,12 +80,11 @@ const Section = styled.div`
   overflow: scroll;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 10px;
   row-gap: 12px;
+  justify-content: space-between;
 
   height: 75vh;
-
   margin-top: 30px;
   padding-bottom: 120px;
 
@@ -113,8 +111,8 @@ const Rank = styled.div`
   flex-basis: 10%;
 `;
 const Team = styled.div`
-  flex-basis: 30%;
   display: flex;
+  flex-basis: 30%;
   line-height: ${({ theme }) => theme.fontSize.m};
 `;
 const Game = styled.div`

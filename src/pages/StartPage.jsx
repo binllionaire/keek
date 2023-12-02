@@ -9,11 +9,12 @@ const Header = styled.div``;
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
 
   height: 70vh;
-  justify-content: center;
+
   @media screen and (max-height: 700px) {
     gap: 0;
   }
@@ -37,23 +38,23 @@ const BackgroundBox = styled.div`
   max-width: 768px;
   height: 260px;
 
-  border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.normalGrey};
+  border-radius: 50px;
 `;
 
 const ThumbnailImg = styled.img`
   position: absolute;
   bottom: 0;
-
-  width: 300px;
   overflow: hidden;
+  width: 300px;
 `;
 
 const IntroBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 20px;
+  justify-content: center;
+
   width: 100%;
   padding: 20px;
 `;
@@ -67,13 +68,16 @@ const Title = styled.h2`
 
 const BackgroundOverlay = styled.div`
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
+
+  display: ${({ $isopen }) => ($isopen === "true" ? "block" : "none")};
+
   width: 100%;
   height: 100%;
+
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  display: ${({ $isopen }) => ($isopen === "true" ? "block" : "none")};
 `;
 export default function StartPage() {
   const [isBottomSheetOpen, setBottomSheetOpen] = useState("false");

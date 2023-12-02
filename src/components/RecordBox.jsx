@@ -30,11 +30,13 @@ const TeamName = styled.div`
 `;
 const Record = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   min-height: 46px;
 
-  border-radius: 10px;
+  text-align: center;
+
   background-color: ${({ theme, $rank, $isMyTeam }) => {
     if ($isMyTeam === true) {
       return theme.colors.normalGreen;
@@ -42,6 +44,5 @@ const Record = styled.div`
       return $rank < 5 ? theme.colors.darkGreen : theme.colors.darkGrey;
     }
   }};
-
-  text-align: center;
+  border-radius: 10px;
 `;
