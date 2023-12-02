@@ -4,8 +4,10 @@ import Schedule from "../assets/icons/Discovery.svg?react";
 import Record from "../assets/icons/Chart.svg?react";
 import My from "../assets/icons/Profile.svg?react";
 import { PAGE } from "../constants/Page";
+import { useNavigate } from "react-router-dom";
 
 const BottomNav = ({ page }) => {
+  const navigate = useNavigate();
   let homeColor = "#65656B";
   let scheduleColor = "#65656B";
   let recordColor = "#65656B";
@@ -30,16 +32,16 @@ const BottomNav = ({ page }) => {
   return (
     <FooterWrapper>
       <Nav>
-        <Home fill={homeColor}></Home>
+        <Home fill={homeColor} onClick={() => navigate("/home")}></Home>
       </Nav>
       <Nav>
-        <Schedule fill={scheduleColor} />
+        <Schedule fill={scheduleColor} onClick={() => navigate("/schedule")} />
       </Nav>
       <Nav>
-        <Record fill={recordColor} />
+        <Record fill={recordColor} onClick={() => navigate("/record")} />
       </Nav>
       <Nav>
-        <My fill={myColor}></My>
+        <My fill={myColor} onClick={() => navigate("/my")}></My>
       </Nav>
     </FooterWrapper>
   );
