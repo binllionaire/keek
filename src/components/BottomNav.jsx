@@ -54,7 +54,7 @@ const FooterWrapper = styled.div`
   display: flex;
 
   width: 100vw;
-  height: 75px;
+  height: 68px;
 
   background-color: ${({ theme }) => theme.colors.normalGrey};
 `;
