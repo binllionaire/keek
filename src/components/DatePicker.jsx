@@ -10,13 +10,6 @@ const DatePicker = () => {
     setSelectedDate(date);
   };
 
-  const generateDateArray = (startDate) => {
-    for (let i = -5; i < 5; i++) {
-      dateArray.push(addDays(startDate, i));
-    }
-    return dateArray;
-  };
-
   function formatDateString(dateString) {
     const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
     const date = new Date(dateString);
@@ -28,7 +21,7 @@ const DatePicker = () => {
   return (
     <DatePickerContainer>
       {dateArray.map((date, index) => (
-        <DateItem key={date} selected={index === 5} onClick={() => handleDateClick(date)}>
+        <DateItem key={date} selected={index === 1} onClick={() => handleDateClick(date)}>
           <DateText>{formatDateString(date)[0]}</DateText>
           <Day>{formatDateString(date)[1]}</Day>
         </DateItem>
@@ -39,8 +32,15 @@ const DatePicker = () => {
 
 export default DatePicker;
 
+const generateDateArray = (startDate) => {
+  let dateArray = [];
+  for (let i = -1; i < 10; i++) {
+    dateArray.push(addDays(startDate, i));
+  }
+  return dateArray;
+};
 const DateText = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: 22px;
 `;
 
 const Day = styled.p`
@@ -49,13 +49,19 @@ const Day = styled.p`
 
 const DatePickerContainer = styled.div`
   position: absolute;
+  right: 0;
   left: 0;
 
   overflow-x: auto;
   display: flex;
 
   width: 100vw;
+  margin-top: 20px;
   padding: 10px 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const DateItem = styled.div`
@@ -63,15 +69,15 @@ const DateItem = styled.div`
 
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 
-  width: 50px;
-  height: 64px;
+  width: 52px;
+  height: 72px;
   margin: 5px;
   padding: 20px;
 
-  line-height: 24px;
   color: #fff;
   text-align: center;
 
