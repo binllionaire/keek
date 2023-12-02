@@ -20,12 +20,14 @@ const DatePicker = () => {
 
   return (
     <DatePickerContainer>
+      <Left />
       {dateArray.map((date, index) => (
         <DateItem key={date} selected={index === 1} onClick={() => handleDateClick(date)}>
           <DateText>{formatDateString(date)[0]}</DateText>
           <Day>{formatDateString(date)[1]}</Day>
         </DateItem>
       ))}
+      <Right />
     </DatePickerContainer>
   );
 };
@@ -48,9 +50,8 @@ const Day = styled.p`
 `;
 
 const DatePickerContainer = styled.div`
-  position: absolute;
-  right: 0;
-  left: 0;
+  position: fixed;
+  left: 0px;
 
   overflow-x: auto;
   display: flex;
@@ -64,6 +65,36 @@ const DatePickerContainer = styled.div`
   }
 `;
 
+const Left = styled.div`
+  position: fixed;
+  top: 170px;
+  left: 0px;
+
+  width: 50px;
+  height: 92px;
+
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    #181829 70%,
+    #181829 80%,
+    #181829 85%,
+    #181829 100%
+  );
+`;
+
+const Right = styled(Left)`
+  right: 0px;
+  left: auto;
+  background: linear-gradient(
+    -270deg,
+    rgba(0, 0, 0, 0) 0%,
+    #181829 70%,
+    #181829 80%,
+    #181829 85%,
+    #181829 100%
+  );
+`;
 const DateItem = styled.div`
   cursor: pointer;
 
@@ -75,7 +106,6 @@ const DateItem = styled.div`
 
   width: 52px;
   height: 72px;
-  margin: 5px;
   padding: 20px;
 
   color: #fff;
