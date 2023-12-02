@@ -2,8 +2,10 @@ import { ST } from "../styles/commonStyle";
 import { tottenhamPlayer } from "../constants/player/Tottenham";
 import PlayerBox from "../components/PlayerBox";
 import Header from "../components/common/Header";
+import { useNavigate } from "react-router-dom";
 
 export default function PlayerSettingPage() {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -25,7 +27,7 @@ export default function PlayerSettingPage() {
         ))}
       </ST.Section>
       <ST.NavWrapper>
-        <ST.GreenButton>다음</ST.GreenButton>
+        <ST.GreenButton onClick={() => navigate("/home")}>다음</ST.GreenButton>
       </ST.NavWrapper>
     </>
   );
