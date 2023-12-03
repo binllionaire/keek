@@ -11,7 +11,7 @@ const GreenButton = styled.button`
 
   width: 100%;
   max-width: 768px;
-  height: 60px;
+  height: 52px;
   margin: 0 auto;
 
   font-family: "Pretendard-SemiBold";
@@ -19,7 +19,7 @@ const GreenButton = styled.button`
   color: ${({ theme }) => theme.colors.white};
 
   background-color: ${({ theme }) => theme.colors.normalGreen};
-  border-radius: 16px;
+  border-radius: 15px;
 `;
 
 const SignBox = styled.div`
@@ -31,7 +31,7 @@ const SignBox = styled.div`
   gap: 12px;
 
   width: 100%;
-  padding: 28px;
+  padding: 20px;
 `;
 
 const SignUpBox = styled.div`
@@ -86,10 +86,14 @@ const Section = styled.div`
 
   height: 75vh;
   margin-top: 30px;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (max-height: 650px) {
+    height: 60vh;
   }
 `;
 
@@ -113,7 +117,6 @@ const Rank = styled.div`
 const Team = styled.div`
   display: flex;
   flex-basis: 30%;
-  line-height: ${({ theme }) => theme.fontSize.m};
 `;
 const Game = styled.div`
   flex-basis: 10%;
