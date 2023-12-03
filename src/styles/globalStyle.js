@@ -78,7 +78,7 @@ html{
 
   width: 100vw;
   height: 100vh;
-  padding: 28px;
+  padding: 20px;
 
   background-color:${({ theme }) => theme.colors.darkGrey};
 }
