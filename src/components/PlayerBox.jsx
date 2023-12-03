@@ -24,7 +24,7 @@ const PlayerBoxWrapper = styled.label`
   display: flex;
   flex-direction: column;
 
-  width: 98px;
+  width: 102px;
   height: 150px;
   padding: 10px;
 
