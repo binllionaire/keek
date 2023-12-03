@@ -5,7 +5,7 @@ const RecordBox = ({ rank, logo, name }) => {
   if (name === "크리스탈 팰리스") name = "팰리스";
   if (name === "노팅엄 포레스트") name = "노팅엄";
   return (
-    <Record $rank={Number(rank.rank)}>
+    <Record $rank={Number(rank.rank)} $isMyTeam={name === "토트넘"}>
       <R.Rank>{rank.rank}</R.Rank>
       <R.Team>
         <TeamLogo src={logo}></TeamLogo>
