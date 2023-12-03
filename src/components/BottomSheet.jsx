@@ -5,79 +5,7 @@ import hideIcon from "../assets/icons/Hide.svg";
 import { ST } from "../styles/commonStyle";
 import { useNavigate } from "react-router-dom";
 
-const Sheet = styled.div`
-  position: fixed;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  transform: translateY(
-    ${({ $isopen }) => ($isopen === "true" ? "0" : "100%")}
-  );
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-
-  width: 100%;
-  height: ${({ option }) => (option === 0 ? "50vh" : "60vh")};
-  padding: 10px 20px;
-
-  background-color: ${({ theme }) => theme.colors.normalGrey};
-  border-radius: 40px 40px 0 0;
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-
-  transition: transform 0.3s ease-in-out, height 0.3s;
-
-  @media screen and (max-height: 700px) {
-    height: ${({ option }) => (option === 0 ? "65vh" : "75vh")};
-  }
-`;
-
-const SheetHeader = styled.div`
-  width: 68px;
-  height: 8px;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
-  border-radius: 10px;
-`;
-
-const SheetTitle = styled.h2`
-  margin: 16px 0;
-  font-family: "Pretendard-SemiBold";
-  font-size: ${({ theme }) => theme.fontSize.xl};
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  gap: 10px;
-
-  width: 100%;
-  height: 60px;
-  padding: 0 20px;
-
-  background-color: ${({ theme }) => theme.colors.darkGrey};
-  border-radius: 16px;
-`;
-
-const InputIcon = styled.img``;
-
-const Input = styled.input`
-  flex-grow: 1;
-
-  font-family: "Pretendard-SemiBold";
-  font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.white};
-
-  background-color: ${({ theme }) => theme.colors.darkGrey};
-  border-radius: 16px;
-  outline: none;
-`;
-
-export default function BottomSheet({
-  isBottomSheetOpen,
-  openBottomSheet,
-  option,
-}) {
+export default function BottomSheet({ isBottomSheetOpen, openBottomSheet, option }) {
   const navigate = useNavigate();
 
   const navToSettingPage = () => {
@@ -113,9 +41,7 @@ export default function BottomSheet({
           <ST.GreenButton>회원가입</ST.GreenButton>
         )}
         <ST.SignUpBox>
-          <ST.Intro>
-            {option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}
-          </ST.Intro>
+          <ST.Intro>{option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}</ST.Intro>
           <ST.Sign
             onClick={() => {
               option === 0 ? openBottomSheet(1) : openBottomSheet(0);
@@ -128,3 +54,75 @@ export default function BottomSheet({
     </Sheet>
   );
 }
+
+const Sheet = styled.div`
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  transform: translateY(${({ $isopen }) => ($isopen === "true" ? "0" : "100%")});
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  width: 100vw;
+  height: ${({ option }) => (option === 0 ? "50vh" : "60vh")};
+  margin: 0 auto;
+  padding: 10px 20px;
+
+  background-color: ${({ theme }) => theme.colors.normalGrey};
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s ease-in-out,
+    height 0.3s;
+
+  @media screen and (max-height: 700px) {
+    height: ${({ option }) => (option === 0 ? "65vh" : "75vh")};
+  }
+`;
+
+const SheetHeader = styled.div`
+  width: 68px;
+  height: 8px;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  border-radius: 10px;
+`;
+
+const SheetTitle = styled.h2`
+  margin: 16px 0;
+  font-family: "Pretendard-SemiBold";
+  font-size: ${({ theme }) => theme.fontSize.xl};
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  border-radius: 16px;
+`;
+
+const InputIcon = styled.img`
+  width: 24px;
+`;
+
+const Input = styled.input`
+  flex-grow: 1;
+  font-family: "Pretendard-SemiBold";
+  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.white};
+
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.darkGrey};
+  border-radius: 16px;
+  outline: none;
+`;
