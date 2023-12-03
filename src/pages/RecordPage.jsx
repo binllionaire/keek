@@ -61,11 +61,18 @@ const BoardWrapper = styled.div`
 `;
 
 const BoardBody = styled.div`
-  overflow-y: auto;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   max-height: 65vh;
   padding-bottom: 75px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media screen and (max-height: 650px) {
+    max-height: 60vh;
+  }
 `;

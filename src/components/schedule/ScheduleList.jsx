@@ -47,4 +47,8 @@ const ListWrapper = styled.div`
   height: 60vh;
   margin-top: 140px;
   padding-bottom: 68px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
