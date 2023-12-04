@@ -1,4 +1,4 @@
-import BottomNav from "../components/BottomNav";
+import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
 import FavPlayer from "../components/home/FavPlayer";
 import FavTeamInfo from "../components/home/FavTeamInfo";

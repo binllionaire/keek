@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Home from "../assets/icons/Home.svg?react";
-import Schedule from "../assets/icons/Discovery.svg?react";
-import Record from "../assets/icons/Chart.svg?react";
-import My from "../assets/icons/Profile.svg?react";
-import { PAGE } from "../constants/Page";
+import Home from "../../assets/icons/Home.svg?react";
+import Schedule from "../../assets/icons/Discovery.svg?react";
+import Record from "../../assets/icons/Chart.svg?react";
+import My from "../../assets/icons/Profile.svg?react";
+import { PAGE } from "../../constants/Page";
 import { useNavigate } from "react-router-dom";
 
 const BottomNav = ({ page }) => {

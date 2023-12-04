@@ -6,7 +6,7 @@ import RecordBox from "../components/RecordBox";
 import { useState } from "react";
 import BoardHeader from "../components/BoardHeader";
 import { PAGE } from "../constants/Page";
-import BottomNav from "../components/BottomNav";
+import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
 const RecordPage = () => {
   const [teams, setTeams] = useState([]);
