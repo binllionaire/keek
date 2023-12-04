@@ -117,11 +117,13 @@ const InputIcon = styled.img`
 
 const Input = styled.input`
   flex-grow: 1;
+
+  width: 100%;
+
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.l};
   color: ${({ theme }) => theme.colors.white};
 
-  width: 100%;
   background-color: ${({ theme }) => theme.colors.darkGrey};
   border-radius: 16px;
   outline: none;

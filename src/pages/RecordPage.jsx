@@ -72,6 +72,7 @@ const BoardBody = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
   @media screen and (max-height: 650px) {
     max-height: 60vh;
   }
