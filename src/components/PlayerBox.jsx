@@ -23,6 +23,8 @@ const PlayerBoxWrapper = styled.label`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
 
   width: 102px;
   height: 150px;
