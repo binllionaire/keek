@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const PlayerBox = ({ id, flagSrc, korName, engName, number, playerImgSrc }) => {
   return (
     <>
-      <RadioInput type="radio" id={`player${id}`} name="player" />
+      <RadioInput type="checkbox" id={`player${id}`} name="player" />
       <PlayerBoxWrapper htmlFor={`player${id}`}>
         <Flag $flagSrc={flagSrc} />
         <KorName>{korName}</KorName>
