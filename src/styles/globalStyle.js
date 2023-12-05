@@ -31,7 +31,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 
-	font-family: 'Pretendard-Regular';
+	font-family: 'Pretendard';
 	font-size: 100%;
   color:${({ theme }) => theme.colors.white};
 	vertical-align: baseline;
@@ -46,6 +46,7 @@ html{
   padding: 20px;
 
   background-color:${({ theme }) => theme.colors.darkGrey};
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -53,6 +54,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  margin: 0 auto;
 	line-height: 1;
 }
 button{
@@ -79,35 +81,35 @@ table {
 }
 
   @font-face {
-      font-family: 'Pretendard-Black';
+      font-family: 'Pretendard';
       font-weight: 900;
       font-style: normal; 
       src: local("PretendardStd-Black"),url(${PPRETENDARD_BLACK}) format('woff');
   }
 
   @font-face {
-      font-family: 'Pretendard-Bold';
+      font-family: 'Pretendard';
       font-weight: 700;
       font-style: normal; 
       src: local("PretendardStd-Bold"),url(${PPRETENDARD_BOLD}) format('woff');
   }
 
   @font-face {
-      font-family: 'Pretendard-Medium';
+      font-family: 'Pretendard';
       font-weight: 500;
       font-style: normal; 
       src: local("PretendardStd-Medium"),url(${PPRETENDARD_MEDIUM}) format('woff');
   }
 
   @font-face {
-      font-family: 'Pretendard-Regular';
+      font-family: 'Pretendard';
       font-weight: 400;
       font-style: normal; 
       src: local("PretendardStd-Regular"),url(${PPRETENDARD_REGULAR}) format('woff');
   }
 
   @font-face {
-      font-family: 'Pretendard-SemiBold';
+      font-family: 'Pretendard';
       font-weight: 600;
       font-style: normal; 
       src: local("PretendardStd-SemiBold"),url(${PPRETENDARD_SEMIBOLD}) format('woff');
