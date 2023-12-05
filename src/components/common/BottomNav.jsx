@@ -52,11 +52,13 @@ const FooterWrapper = styled.div`
   position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
 
   display: flex;
 
-  width: 100vw;
+  max-width: 768px;
   height: 68px;
+  margin: 0 auto;
 
   background-color: ${({ theme }) => theme.colors.normalGrey};
 `;
