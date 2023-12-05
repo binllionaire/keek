@@ -6,7 +6,7 @@
     },
     {
       "src": "/api/prx/hermes/api/game(.*)",
-      "dest": "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=epl&seasonKey=20232024&fromDate=20231201&toDate=20231231"
+      "dest": "https://sports.daum.net/prx/hermes/api/game/schedule.json?page=1&leagueCode=epl&seasonKey=20232024&fromDate=20231206&toDate=20231231"
     },
     { "src": "/[^.]+", "dest": "/", "status": 200 }
   ]
