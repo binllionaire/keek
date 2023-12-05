@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 
 const Logo = styled.h1`
-  font-family: "Pretendard-Black";
+  font-family: "Pretendard";
   font-size: ${({ theme }) => theme.fontSize.xl};
+  font-weight: 900;
   color: ${({ theme }) => theme.colors.mainGreen};
 `;
 
@@ -67,8 +68,10 @@ const PageIntroWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: "Pretendard-Black";
+  font-family: "Pretendard";
   font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-weight: 900;
   color: ${({ theme }) => theme.colors.white};
 `;
 

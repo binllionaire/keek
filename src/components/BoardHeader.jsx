@@ -24,6 +24,7 @@ const Header = styled.div`
   padding-bottom: 14px;
 
   text-align: center;
+  font-weight: 700;
 
   border-bottom: ${({ theme }) => theme.colors.lightGrey} 1px solid;
 `;

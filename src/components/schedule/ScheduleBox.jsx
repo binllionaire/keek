@@ -45,6 +45,7 @@ const Box = styled.div`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border-radius: 10px;
 `;
+
 const HomeTeam = styled.div`
   display: flex;
   gap: 8px;
@@ -60,6 +61,7 @@ const AwayTeam = styled(HomeTeam)`
 
 const Name = styled.p`
   font-size: ${({ theme }) => theme.fontSize.m};
+  font-weight: 700;
 `;
 
 const DateWrapper = styled.div`
@@ -77,7 +79,9 @@ const Date = styled.p`
 `;
 
 const Time = styled.p`
+  font-family: "Pretendard-Bold";
   font-size: ${({ theme }) => theme.fontSize.s};
+  font-weight: 600;
 `;
 
 const Logo = styled.img`

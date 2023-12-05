@@ -66,7 +66,7 @@ const Wrapper = styled.div`
 const Title = styled.p`
   font-family: "Pretendard-SemiBold";
   font-size: ${({ theme }) => theme.fontSize.m};
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 const PlayerBoxContainer = styled.div`

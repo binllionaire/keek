@@ -27,6 +27,7 @@ const TeamLogo = styled.img`
 `;
 const TeamName = styled.div`
   margin-left: 10px;
+  font-weight: 700;
 `;
 const Record = styled.div`
   display: flex;
