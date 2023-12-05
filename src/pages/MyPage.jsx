@@ -1,4 +1,4 @@
-import BottomNav from "../components/BottomNav";
+import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
 import { PAGE } from "../constants/Page";
 import { ST } from "../styles/commonStyle";

@@ -1,4 +1,4 @@
-import BottomNav from "../components/BottomNav";
+import BottomNav from "../components/common/BottomNav";
 import Header from "../components/common/Header";
 import DatePicker from "../components/DatePicker";
 import ScheduleList from "../components/schedule/ScheduleList";
