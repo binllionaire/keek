@@ -38,7 +38,13 @@ export default function BottomSheet({ isBottomSheetOpen, openBottomSheet, option
         {option === 0 ? (
           <ST.GreenButton onClick={navToSettingPage}>로그인</ST.GreenButton>
         ) : (
-          <ST.GreenButton>회원가입</ST.GreenButton>
+          <ST.GreenButton
+            onClick={() => {
+              option === 0 ? openBottomSheet(1) : openBottomSheet(0);
+            }}
+          >
+            회원가입
+          </ST.GreenButton>
         )}
         <ST.SignUpBox>
           <ST.Intro>{option === 0 ? "계정이 없으신가요?" : "계정이 있으신가요?"}</ST.Intro>
