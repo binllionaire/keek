@@ -5,7 +5,7 @@ const FavTeamInfo = () => {
     <FavTeamWrapper>
       <PageIntroWrapper>
         <Title>토트넘 홋스퍼</Title>
-        <Intro>현재 4위</Intro>
+        <Intro>현재 5위</Intro>
       </PageIntroWrapper>
       <TeamLogo src="/club/club_tottenham.png" />
     </FavTeamWrapper>
@@ -27,7 +27,6 @@ const TeamLogo = styled.img`
   width: 100px;
 
   filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
 `;
 
 const PageIntroWrapper = styled.div`
@@ -38,7 +37,7 @@ const PageIntroWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: "Pretendard-Black";
+  font-family: "Pretendard";
   font-size: ${({ theme }) => theme.fontSize.xl};
   color: ${({ theme }) => theme.colors.white};
 `;
