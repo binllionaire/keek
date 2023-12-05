@@ -36,7 +36,7 @@ export default DatePicker;
 
 const generateDateArray = (startDate) => {
   let dateArray = [];
-  for (let i = -1; i < 10; i++) {
+  for (let i = -1; i < 30; i++) {
     dateArray.push(addDays(startDate, i));
   }
   return dateArray;
@@ -51,13 +51,14 @@ const Day = styled.p`
 
 const DatePickerContainer = styled.div`
   position: fixed;
-  left: 0px;
+  left: 0;
+  right: 0;
 
   overflow-x: auto;
   display: flex;
 
-  width: 100vw;
-  margin-top: 20px;
+  max-width: 768px;
+  margin: 20px auto 0;
   padding: 10px 0;
 
   &::-webkit-scrollbar {
