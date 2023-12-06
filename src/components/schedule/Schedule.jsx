@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ScheduleBox from "./ScheduleBox";
 import { format } from "date-fns";
+import { PAGE } from "../../constants/Page";
 
 const Schedule = ({ schedule }) => {
   const dateString = schedule["0"].startDate;
@@ -29,7 +30,7 @@ const Schedule = ({ schedule }) => {
     <ScheduleBoxWrapper>
       <MatchDate>{date}</MatchDate>
       {schedule.map((scheduleItem, scheduleIndex) => (
-        <ScheduleBox key={scheduleIndex} item={scheduleItem} date={date} />
+        <ScheduleBox key={scheduleIndex} item={scheduleItem} date={date} page={PAGE.SCHEDULE} />
       ))}
     </ScheduleBoxWrapper>
   );

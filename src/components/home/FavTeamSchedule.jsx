@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ScheduleBox from "../schedule/ScheduleBox";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { PAGE } from "../../constants/Page";
 
 const FavTeamSchedule = () => {
   const [schedule, setSchedule] = useState([]);
@@ -53,6 +54,7 @@ const FavTeamSchedule = () => {
               <ScheduleBox
                 key={index}
                 item={schedule}
+                page={PAGE.HOME}
                 date={
                   schedule.startDate.slice(4).slice(0, 2) +
                   "." +

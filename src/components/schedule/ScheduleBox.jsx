@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { PAGE } from "../../constants/Page";
 
-const ScheduleBox = ({ item, date }) => {
+const ScheduleBox = ({ item, date, page }) => {
   const homeTeamName =
     item.homeTeamName === "노팅엄 포레스트"
       ? "노팅엄"
@@ -15,7 +16,11 @@ const ScheduleBox = ({ item, date }) => {
         : item.awayTeamName;
 
   return (
-    <Box $isFavTeam={homeTeamName === "토트넘" || awayTeamName === "토트넘"}>
+    <Box
+      $isFavTeam={
+        page === PAGE.SCHEDULE && (homeTeamName === "토트넘" || awayTeamName === "토트넘")
+      }
+    >
       <HomeTeam>
         <Name>{homeTeamName}</Name>
         <Logo src={item.homeTeamImageUrl} />
