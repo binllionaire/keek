@@ -15,7 +15,7 @@ const ScheduleBox = ({ item, date }) => {
         : item.awayTeamName;
 
   return (
-    <Box>
+    <Box $isFavTeam={homeTeamName === "토트넘" || awayTeamName === "토트넘"}>
       <HomeTeam>
         <Name>{homeTeamName}</Name>
         <Logo src={item.homeTeamImageUrl} />
@@ -42,7 +42,8 @@ const Box = styled.div`
   width: 100%;
   height: 78px;
 
-  background-color: ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme, $isFavTeam }) =>
+    $isFavTeam ? theme.colors.normalGreen : theme.colors.lightGrey};
   border-radius: 10px;
 `;
 
